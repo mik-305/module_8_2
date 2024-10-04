@@ -7,6 +7,7 @@ def personal_sum(self):
         try:
             result += i
         except TypeError:
+            print('Некорректный тип данных для подсчёта суммы -', i)
             incorrect_data +=1
         except IndexError:
             print('Неверный тип данных по индексу - >', i)
@@ -15,6 +16,10 @@ def calculate_average(self):
     personal_sum(numbers)
     sredn = 0
     try:
+        if result == 0:
+            print('("', numbers, '")')
+            print('Коллекция либо пуста, либо не содержит чисел :')
+            return
         sredn = result / len(numbers)                   # Высичляем среднее значение по списку
         print('Среднее значение :', sredn)
     except ZeroDivisionError:
@@ -23,18 +28,6 @@ def calculate_average(self):
 
 
 numbers = ("1, 2, 3")
-print(f'Результат 1: {calculate_average(numbers)}')
-
-
-
-
-
-
-
-#numbers = (10, 2, 0, 4)
-#numbers = ('B','C', 3, 4,'A')
-#numbers = (7, 2, 3, 'A', 4, 10)
-#personal_sum(numbers)
-#calculate_average(numbers)
-#print('Результат = ', result)
-#print('Количество incorrect_data = ', incorrect_data)
+#print(f'Результат 1: {calculate_average(numbers)}')
+#numbers = ([1, "Строка", 3, "Ещё Строка"])
+print(f'Результат 2: {calculate_average(numbers)}')
