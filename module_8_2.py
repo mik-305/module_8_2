@@ -23,7 +23,7 @@ def calculate_average(self):
         sredn = result / (len(numbers) - incorrect_data)              # Cреднее значение по списку - только числа!)
     except ZeroDivisionError:
         print('Деление на ноль!')
-    return sredn #result
+    return sredn 
 
 
 numbers = ("1, 2, 3")
